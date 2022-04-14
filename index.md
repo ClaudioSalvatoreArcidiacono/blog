@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 # Welcome
 
 Hi! I am Claudio. I am currently a Data Scientist at ING.
