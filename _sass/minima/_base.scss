@@ -289,7 +289,7 @@ kbd {
     background-color: lighten($background-color, 10%);
     border: 1px solid $background-color;
     border-radius: 3px;
-    box-shadow: 0 1px 1px $text-color, inset 0 1px 0 0 lighten($background-color, 10%);
+    box-shadow: 0 1px 1px darken($background-color, 10%), inset 0 1px 0 0 lighten($background-color, 10%);
     overflow-wrap: break-word;
     position: relative;
     bottom: 5px;
