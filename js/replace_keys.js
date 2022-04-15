@@ -1,4 +1,4 @@
-if ((window.navigator?.userAgentData?.platform ?? window.navigator.platform).includes("mac")) {
+if (window.safari !== undefined || (window.navigator?.userAgentData?.platform ?? window.navigator.platform).includes("mac")) {
 
     html = document.querySelector(".post-content").innerHTML
     to_replace = {
