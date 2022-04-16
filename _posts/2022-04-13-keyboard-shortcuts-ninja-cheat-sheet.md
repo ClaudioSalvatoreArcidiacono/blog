@@ -4,7 +4,18 @@ title:  "Keyboard Shortcuts Ninja Cheat Sheet"
 date:   2022-04-14 13:25:56 0200
 categories: VSCode
 ---
-# Keyboard Shortcuts Ninja Cheat Sheet
+
+<figure>
+<img
+width=800
+height=600
+src="https://images.unsplash.com/photo-1567299720257-2619000f105e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+style="width: 100%; height: 600px; object-fit: cover"
+/>
+
+<figcaption style="text-align: center">Foto of <a href="https://unsplash.com/@danny_lincoln"  target="_blank">Daniel Lincoln</a> on <a href="https://unsplash.com/"  target="_blank">Unsplash</a></figcaption>
+</figure>
+
 
 Let's start this blog with some very fundamental programming skills - mastering the keyboard.
 In this post I will show you what you can do with your keyboard together with the shortcuts that I have used. Most of the shortcuts in this post will work for any text editor, some of the most advanced shortcuts are `VSCode` exclusives.
