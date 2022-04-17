@@ -11,7 +11,6 @@ linkedin_username: "claudio-salvatore-arcidiacono-b59055111"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: "minima"
 
 # rss: rss
 
@@ -22,6 +21,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 titles_from_headings:
   strip_title: true
