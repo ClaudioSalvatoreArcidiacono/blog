@@ -7,7 +7,9 @@ layout: default
         {%- if page.title -%}
         <h1 class="page-heading">{{ page.title }}</h1>
         {%- endif -%}
-        <img class=home-picture src=assets/picture_of_me.jpeg>
+        <div class="home-picture-frame">
+            <img class=home-picture src=assets/picture_of_me.jpeg>
+        </div>
         {{ content }}
     </div>
     <div class="home">
