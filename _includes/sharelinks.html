@@ -19,7 +19,7 @@
 </style>
 
 {% assign safeurl = site.url | append: page.url | url_encode %}
-{% assign url4linkedin = site.url | relative_url | append: page.url | remove : '.html' %}
+{% assign url4linkedin = site.url | append: page.url | relative_url | remove : '.html' %}
 {% assign safetitle = page.title | url_encode %}
 {% assign safetitlepre = "[Blog] " | append: page.author | append: " - " | url_encode %}
 
