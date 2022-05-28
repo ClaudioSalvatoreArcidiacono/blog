@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Python dependencies management workflow using standard tools"
-date:   2022-05-24 13:25:56 0200
+date:   2022-05-28 17:23:56 0200
 categories: software-engineering
 ---
 
