@@ -14,10 +14,6 @@ style="width: 100%; height: 600px; object-fit: cover;"
 <figcaption style="text-align: center">Foto of <a href="https://unsplash.com/@artturijalli"  target="_blank">Artturi Jalli</a> on <a href="https://unsplash.com/"  target="_blank">Unsplash</a></figcaption>
 </figure>
 
-Most of you might already be familiar with packaging with `setuptools`, the `setup.py` file and with dependencies management using `pip` (or `conda`) and the `requirements.txt` file (or the `environment.yml` file).
-
-But did you know that `distutil` has been deprecated in [PEP 632](https://peps.python.org/pep-0632/), that `setuptools` recently started to [discourage the usage of the `setup.py` file for new projects](https://setuptools.pypa.io/en/latest/userguide/quickstart.html#basic-use) and that you should not directly call `setup.py` (e.g. `python setup.py install`)? I highly encourage to read at least the summary section of [this article](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html#summary) about it.
-
 In recent years, things have evolved in the python community; new tools have tried to become the new standard for python when it comes to dependencies management and in some cases, also packaging. Noticeable examples are:
 
 - [poetry](https://python-poetry.org)
@@ -38,7 +34,7 @@ A module might depend on other modules for several reasons. Some modules are use
 
 **Development** dependencies are dependencies that are needed to develop the module but they are not actually used when the module runs. For example, `pytest` is a popular python library for running unit tests.
 
-Following PEP [631](https://peps.python.org/pep-0631/) I propose to specify **runtime** and **development** dependencies in the `pyproject.toml` file as follows:
+Following PEP [631](https://peps.python.org/pep-0631/), I propose to specify dependencies in the `pyproject.toml` file. Moreover, I propose to specify **runtime** and **development** dependencies as follows:
 
 ```toml
 ...
