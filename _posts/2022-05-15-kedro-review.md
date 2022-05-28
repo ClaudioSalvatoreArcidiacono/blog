@@ -76,7 +76,7 @@ The [Data Engienering Convention](https://kedro.readthedocs.io/en/0.14.3/06_reso
 
 <figure>
 <img
-src="{{ '../assets/2022-05-15-kedro-review/simple_pipeline.png' | relative_url }}"
+src="{{ '/assets/2022-05-15-kedro-review/simple_pipeline.png' | relative_url }}"
 />
 <figcaption style="text-align: center">Picture taken from the <a href="https://kedro.readthedocs.io/en/stable/tutorial/create_pipelines.html#visualise-the-pipeline"  target="_blank">kedro official documentation</a></figcaption>
 </figure>
