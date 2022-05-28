@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Python dependencies management workflow using standard tools"
+title:  "Python dependency management workflow using standard tools"
 date:   2022-05-28 12:23:56 0200
 categories: software-engineering
 ---
@@ -14,7 +14,7 @@ style="width: 100%; height: 600px; object-fit: cover;"
 <figcaption style="text-align: center">Foto of <a href="https://unsplash.com/@artturijalli"  target="_blank">Artturi Jalli</a> on <a href="https://unsplash.com/"  target="_blank">Unsplash</a></figcaption>
 </figure>
 
-In recent years, things have evolved in the python community; new tools have tried to become the new standard for python when it comes to dependencies management and in some cases, also packaging. Noticeable examples are:
+In recent years, things have evolved in the python community; new tools have tried to become the new standard for python when it comes to dependency management and in some cases, also packaging. Noticeable examples are:
 
 - [poetry](https://python-poetry.org)
 - [pipenv](https://pipenv.pypa.io/en/latest/)
@@ -22,13 +22,13 @@ In recent years, things have evolved in the python community; new tools have tri
 
 Parallelly, but less noticeably, some Python Enhancement Proposals (aka PEPs) have started to *officialize* the usage of the `pyproject.toml` file and to standardize the fields of this document for specifying dependencies and build backends (PEP [517](https://peps.python.org/pep-0517/), [518](https://peps.python.org/pep-0518/), [631](https://peps.python.org/pep-0631/) and many others).
 
-In recent months I have started to think about what could be the *ultimate workflow* for python dependencies management and what I realized is that **there is no one-size-fits-all** solution to this problem. Unlike other programming languages (like javascript with npm for example), in python there is not a standard and correct way for solving this problem, but instead, there are a bunch of different tools that fit a specific workflow.
+In recent months I have started to think about what could be the *ultimate workflow* for python dependency management and what I realized is that **there is no one-size-fits-all** solution to this problem. Unlike other programming languages (like javascript with npm for example), in python there is not a standard and correct way for solving this problem, but instead, there are a bunch of different tools that fit a specific workflow.
 
-In this article I would like to propose a possible workflow for python dependencies management. The goal of the workflow I propose in this article is to rely on standard tools (like pip) as much as possible and to follow the latest python trends and recommendations.
+In this article I would like to propose a possible workflow for python dependency management. The goal of the workflow I propose in this article is to rely on standard tools (like pip) as much as possible and to follow the latest python trends and recommendations.
 
 ## Dependencies specification
 
-A module might depend on other modules for several reasons. Some modules are used only during testing, other during building and others at runtime. For the sake of simplicity, in this article I will classify dependencies into two buckets: **development** and **runtime** dependencies. I am quite confident that this simplification will capture the vast majority of use cases.
+A module might depend on other modules for several reasons. Some modules are used only during testing, others during building and others at runtime. For the sake of simplicity, in this article I will classify dependencies into two buckets: **development** and **runtime** dependencies. I am quite confident that this simplification will capture the vast majority of use cases.
 
 **Runtime** dependencies are dependencies that are necessary to run your code, like the libraries that are imported. For example, if in my code I write `import pandas as pd`, pandas automatically becomes a runtime dependencies of the module that I am writing.
 
@@ -80,7 +80,7 @@ pip freeze --exclude-editable > requirements.txt
 
 Every time you edit the `pyproject.toml` and update your environment.
 
-The `pyproject.toml` is *for humans*, the `requirements.txt` is *for robots*. What I mean by that is that the `pyproject.toml` should be easily readable and it should be manually edited by developers (which are humans, I know, hard to believe, right?), whether the `requirements.txt` file should not be manually edited and should be edited by pip (the robot :) ).
+The `pyproject.toml` is *for humans*, the `requirements.txt` is *for robots*. What I mean by that is that the `pyproject.toml` should be easily readable and it should be manually edited by developers (which are humans, I know, hard to believe, right?), while the `requirements.txt` file should not be manually edited and should be edited by pip (the robot :) ).
 
 If you are familiar with the workflows of [poetry](https://python-poetry.org), [pipenv](https://pipenv.pypa.io/en/latest/) or [pip-tools](https://github.com/jazzband/pip-tools), what I propose here is to use the `pyproject.toml` as the place to put your high level requirements, like the `pyproject.toml` for poetry or the `Pipfile` for Pipenv and the `requirements.in` for pip-tools and the `requirements.txt` as the *lock* file (as it is done in pip-tools).
 
@@ -144,7 +144,10 @@ requires = ["flit_core >=3.2,<4"]
    python -m venv venv
 
    # Activate virtual environment
+   # On Linux/Mac
    source ./venv/bin/activate
+   # On Windows/Powershell
+   .\venv\Scripts\activate
    ```
 
 3. The project and its initial dependencies are installed in the environment by running the command
@@ -179,7 +182,10 @@ requires = ["flit_core >=3.2,<4"]
    python -m venv venv
 
    # Activate virtual environment
+   # On Linux/Mac
    source ./venv/bin/activate
+   # On Windows/Powershell
+   .\venv\Scripts\activate
    ```
 
 2. The project and its dependencies are installed in the environment by running the commands
@@ -201,7 +207,10 @@ requires = ["flit_core >=3.2,<4"]
 2. The virtual environment for this project is activated by running the command
 
    ```bash
+   # On Linux/Mac
    source ./venv/bin/activate
+   # On Windows/Powershell
+   .\venv\Scripts\activate
    ```
 
 3. The project and its dependencies are updated by running the command
@@ -260,7 +269,10 @@ make env-create
 
 # Always activate your virtualenv before executing
 # the commands below
+# On Linux/Mac
 source ./venv/bin/activate
+# On Windows/Powershell
+.\venv\Scripts\activate
 
 # Install dependencies
 make env-install
