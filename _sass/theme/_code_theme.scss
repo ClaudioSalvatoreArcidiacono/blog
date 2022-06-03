@@ -9,7 +9,7 @@
 .hljs-selector-tag,
 .hljs-section,
 .hljs-link {
-    color: #8be9fd;
+    color: #68a5b3;
 }
 
 .hljs-keyword {
@@ -18,7 +18,9 @@
 
 .hljs,
 .hljs-subst {
-    color: #f8f8f2;
+    @include theme() {
+        color: theme-get('text-color');
+    }
 }
 
 .hljs-title,
@@ -37,7 +39,9 @@
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-    color: rgb(217, 218, 213);
+    @include theme() {
+        color: theme-get('text-color');
+    }
 }
 
 .hljs-comment,

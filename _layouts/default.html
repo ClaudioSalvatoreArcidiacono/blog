@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html class="lightTheme" lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
 
@@ -16,5 +16,6 @@
     {%- include footer.html -%}
 
   </body>
+  <script src="{{ 'js/switch_theme.js' | relative_url }}"></script>
 
 </html>

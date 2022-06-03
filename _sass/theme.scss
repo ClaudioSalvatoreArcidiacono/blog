@@ -54,6 +54,8 @@ $on-laptop: 800px !default;
 
 // Import partials.
 @import "theme/base",
+"theme/theme_palettes",
+"theme/code_theme",
 "theme/layout",
 "theme/syntax-highlighting"
 ;

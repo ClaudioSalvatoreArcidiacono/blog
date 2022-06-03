@@ -99,14 +99,6 @@
     }
 }
 
-.trigger {
-    border-bottom: 5px solid $brand-color;
-    &:hover{
-        background-color: lighten($brand-color, 10%);
-        border-bottom: 5px solid darken($brand-color, 10%);
-    }
-}
-
 /**
  * Site footer
  */
@@ -131,11 +123,14 @@
     height: 300px;
     float: right;
     margin-left: 50px;
+
     // margin-right: 50px;
-    border: 10px solid #fff;
+    @include theme() {
+        border: 10px solid theme-get('text-color');
+    }
 }
 
-@include media-query($on-palm){
+@include media-query($on-palm) {
     .home-picture-frame {
         width: 100%;
         margin-bottom: 50px;
@@ -148,6 +143,7 @@
         margin-right: auto;
     }
 }
+
 .home-postcard {
     margin-bottom: 100px;
 }

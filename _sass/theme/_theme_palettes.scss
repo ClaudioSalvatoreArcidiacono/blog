@@ -1,0 +1,51 @@
+$themes: (darkTheme: ('text-color': rgb(217, 218, 213),
+        'background-color': #181818,
+        'background-color-light': lighten(#181818, 10%),
+        'background-color-dark': darken(#181818, 10%),
+        'brand-color': #F40060,
+        'brand-color-light': lighten(#F40060, 20%),
+        'accent-color': #fff,
+        'secondary-color': #F40060,
+        'grey-color': #828282,
+        'grey-color-light': lighten(#828282, 40%),
+        'grey-color-dark': darken(#828282, 25%),
+    ),
+    lightTheme: ('text-color': #181818,
+        'background-color': white,
+        'background-color-light': darken(white, 10%),
+        'background-color-dark': lighten(white, 10%),
+        'brand-color': #F40060,
+        'brand-color-light': lighten(#F40060, 20%),
+        'accent-color': #181818,
+        'secondary-color': #F40060,
+        'grey-color': #828282,
+        'grey-color-light': lighten(#828282, 40%),
+        'grey-color-dark': darken(#828282, 25%), ));
+
+$theme-map: null;
+
+@mixin theme() {
+
+    @each $theme,
+    $map in $themes {
+        // $theme: darkTheme, lightTheme
+        // $map: ('text-color': ..., 'bg-color': ...)
+
+        // make the $map globally accessible, so that theme-get() can access it
+        $theme-map: $map !global;
+
+        // make a class for each theme using interpolation -> #{}
+        // use & for making the theme class ancestor of the class
+        // from which you use @include theme() {...}
+        .#{$theme} & {
+            @content; // the content inside @include theme() {...}
+        }
+    }
+
+    // no use of the variable $theme-map now
+    $theme-map: null !global;
+}
+
+@function theme-get($key) {
+    @return map-get($theme-map, $key);
+}
