@@ -368,31 +368,7 @@ kbd {
     bottom: 5px;
 }
 
-/* Style buttons */
-.switch-theme-button {
-    @include theme() {
-        background-color: theme-get('brand-color');
-    }
 
-    /* Blue background */
-    border: none;
-    /* Remove borders */
-    color: black;
-    /* White text */
-    padding: 12px 14px;
-    /* Some padding */
-    font-size: 24px;
-    /* Set a font size */
-    cursor: pointer;
-    border-radius: 50%;
-
-    /* Mouse pointer on hover */
-    &:hover {
-        @include theme() {
-            background-color: theme-get('brand-color-light');
-        }
-    }
-}
 
 #share-buttons {
     display: inline-block;

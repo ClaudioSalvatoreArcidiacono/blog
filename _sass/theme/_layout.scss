@@ -2,8 +2,6 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    // border-bottom: 1px solid $grey-color-light;
     min-height: $spacing-unit * 1.865;
     background-color: $brand-color;
     // Positioning context for the mobile navigation icon
@@ -48,8 +46,10 @@
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
+        @include theme() {
+            background-color: theme-get('brand-color');
+        }
+        border: 1px solid #181818;
         border-radius: 5px;
         text-align: right;
 
@@ -89,12 +89,46 @@
         .page-link {
             display: block;
             padding: 5px 10px;
-
+            color: #181818;
             &:not(:last-child) {
                 margin-right: 0;
             }
 
             margin-left: 20px;
+        }
+    }
+}
+
+/* Style buttons */
+.switch-theme-button {
+
+    float: right;
+
+    @include theme() {
+        background-color: theme-get('brand-color');
+    }
+
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: black;
+    /* White text */
+    padding: 12px 14px;
+    /* Some padding */
+    font-size: 24px;
+    /* Set a font size */
+    cursor: pointer;
+    border-radius: 50%;
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 12px;
+        right: 70px;
+        padding: 3px 5px;
+    }
+    /* Mouse pointer on hover */
+    &:hover {
+        @include theme() {
+            background-color: theme-get('brand-color-light');
         }
     }
 }
