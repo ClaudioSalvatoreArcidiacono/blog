@@ -245,6 +245,7 @@ env-create:
 	fi
 
 env-install:
+	pip install --upgrade pip
 	if test -s requirements.txt; \
 	then \
 		echo Installing requirements from requirements.txt; \
